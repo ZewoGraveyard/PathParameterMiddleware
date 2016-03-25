@@ -1,4 +1,4 @@
-// PathParametersMiddleware.swift
+// PathParameterMiddleware.swift
 //
 // The MIT License (MIT)
 //
@@ -24,7 +24,7 @@
 
 @_exported import HTTP
 
-public struct PathParametersMiddleware: Middleware {
+public struct PathParameterMiddleware: Middleware {
     let pathParameters: [String: String]
 
     public init(_ pathParameters: [String: String]) {
