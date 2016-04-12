@@ -31,13 +31,13 @@ public struct PathParameterMiddleware: Middleware {
         self.pathParameters = pathParameters
     }
 
-    public func respond(request: Request, chain: Responder) throws -> Response {
+    public func respond(to request: Request, chainingTo next: Responder) throws -> Response {
         var request = request
 
         for (key, value) in pathParameters {
             request.pathParameters[key] = value
         }
 
-        return try chain.respond(request)
+        return try next.respond(to: request)
     }
 }
